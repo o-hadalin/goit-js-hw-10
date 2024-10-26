@@ -31,6 +31,74 @@ main:has(.back-link) {
   text-align: center;
 }
 
+/* Timer styles */
+
+#datetime-picker {
+  border-radius: 8px;
+  width: 272px;
+  height: 40px;
+  border: 2px solid gray;
+  transition: border-color 0.3s ease;
+}
+
+#datetime-picker:hover {
+  border-color: black;
+}
+
+#datetime-picker:focus {
+  border-color: blue;
+}
+
+button {
+  background-color: #4e75ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: max-content;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  vertical-align: middle;
+}
+
+button:disabled {
+  background: #cfcfcf;
+  color: #989898;
+  cursor: not-allowed;
+}
+
+.timer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 346px;
+  height: 72px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.value {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2e2f42;
+  text-transform: uppercase;
+}
+
 /* Snackbar styles */
 form {
   display: flex;
@@ -99,26 +167,10 @@ input[type='radio']:checked {
   accent-color: #4e75ff;
 }
 
-button {
-  background-color: #4e75ff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 16px;
+button[type='submit'] {
   width: 360px;
-  height: 40px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #6c8cff;
 }
-
-/* iziToast.settings({
-  position: "bottomLeft", 
-  transitionIn: "fadeInUp",
-  transitionOut: "fadeOutDown",
-  close: false 
-}); */

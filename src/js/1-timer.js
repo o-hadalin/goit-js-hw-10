@@ -15,6 +15,9 @@ const options = {
 
 const datetimePicker = document.querySelector("#datetime-picker");
 let userSelectedDate = null;
+const startButton = document.querySelector("[data-start]");
+
+startButton.disabled = true;
 
 datetimePicker.addEventListener("change", () => {
   const flatpickrInstance = datetimePicker._flatpickr;
@@ -28,7 +31,6 @@ datetimePicker.addEventListener("change", () => {
 
 function handleDateSelection(date) {
   const currentDate = new Date();
-  const startButton = document.querySelector("[data-start]");
   
   if (date <= currentDate) {
     iziToast.error({
@@ -43,11 +45,11 @@ function handleDateSelection(date) {
 
 flatpickr("#datetime-picker", options);
 
-document.querySelector("[data-start]").addEventListener("click", () => {
+startButton.addEventListener("click", () => {
   if (!userSelectedDate) return;
-  
-  document.querySelector("[data-start]").disabled = true;
-  document.querySelector("#datetime-picker").disabled = true;
+
+  startButton.disabled = true;
+  datetimePicker.disabled = true;
 
   const intervalId = setInterval(() => {
     const timeLeft = userSelectedDate - new Date();
@@ -59,7 +61,7 @@ document.querySelector("[data-start]").addEventListener("click", () => {
         title: "Success",
         message: "Countdown finished!",
       });
-      document.querySelector("#datetime-picker").disabled = false;
+      datetimePicker.disabled = false;
       return;
     }
 
