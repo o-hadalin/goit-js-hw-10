@@ -100,6 +100,10 @@ button:disabled {
   text-transform: uppercase;
 }
 
+.flatpickr-time input.flatpickr-hour {
+  font-weight: normal;
+}
+
 /* Snackbar styles */
 form {
   display: flex;
@@ -117,12 +121,19 @@ label {
 input[type='number'] {
   border: 1px solid #808080;
   border-radius: 4px;
-  width: 360px;
   height: 40px;
   font-size: 16px;
   outline: none;
   padding: 0 8px;
   box-sizing: border-box;
+}
+
+input[type='number'][name='delay'] {
+  width: 360px;
+}
+
+input[type='number'].numInput {
+  width: auto;
 }
 
 input[type='number']:hover {
