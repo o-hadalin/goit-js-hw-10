@@ -26,19 +26,20 @@ body {
 
 main {
   flex-grow: 1;
+  margin: 0 auto;
 }
 main:has(.back-link) {
   text-align: center;
 }
 
 /* Timer styles */
-
 #datetime-picker {
   border-radius: 8px;
   width: 272px;
   height: 40px;
   border: 2px solid gray;
   transition: border-color 0.3s ease;
+  margin-bottom: 20px;
 }
 
 #datetime-picker:hover {
@@ -60,7 +61,7 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  vertical-align: middle;
+  margin-bottom: 30px;
 }
 
 button:disabled {
