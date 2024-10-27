@@ -10,6 +10,12 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     console.log(selectedDates[0]);
+    const selectedDate = selectedDates[0];
+    
+    if (selectedDate) {
+      userSelectedDate = selectedDate;
+      handleDateSelection(userSelectedDate);
+    }
   },
 };
 
@@ -19,15 +25,15 @@ const startButton = document.querySelector("[data-start]");
 
 startButton.disabled = true;
 
-datetimePicker.addEventListener("change", () => {
-  const flatpickrInstance = datetimePicker._flatpickr;
-  const selectedDate = flatpickrInstance.selectedDates[0];
+// datetimePicker.addEventListener("change", () => {
+//   const flatpickrInstance = datetimePicker._flatpickr;
+//   const selectedDate = flatpickrInstance.selectedDates[0];
   
-  if (selectedDate) {
-    userSelectedDate = selectedDate;
-    handleDateSelection(userSelectedDate);
-  }
-});
+//   if (selectedDate) {
+//     userSelectedDate = selectedDate;
+//     handleDateSelection(userSelectedDate);
+//   }
+// });
 
 function handleDateSelection(date) {
   const currentDate = new Date();
